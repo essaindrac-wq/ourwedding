@@ -1,0 +1,2466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding </title>
+    
+    <!-- ==================== FONT METAL MANIA & GOTHIC ==================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-primary: #020202;
+            --black-secondary: #050505;
+            --black-card: #0a0a0a;
+            --silver-metal: #c0c0c0;
+            --silver-dark: #808080;
+            --iron: #4a4a4a;
+            --blood: #8b0000;
+            --blood-bright: #dc143c;
+            --rust: #8b4513;
+            --gold: #b8860b;
+            --text-light: #d0d0d0;
+            
+            --font-metal: 'Metal Mania', cursive;
+            --font-pirata: 'Pirata One', cursive;
+            --font-decorative: 'Cinzel Decorative', cursive;
+            --font-body: 'Cormorant Garamond', serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black-primary);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 30% 50%, rgba(139,0,0,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(192,192,192,0.05) 0%, transparent 50%),
+                repeating-linear-gradient(45deg, rgba(10,10,10,0.8) 0px, rgba(10,10,10,0.8) 2px, transparent 2px, transparent 4px);
+        }
+
+        .gothic-title, h1, h2, h3 {
+            font-family: var(--font-decorative);
+            color: var(--silver-metal);
+            text-shadow: 
+                0 0 10px rgba(192,192,192,0.5),
+                0 0 20px rgba(192,192,192,0.3),
+                2px 2px 4px rgba(0,0,0,0.9);
+        }
+
+        /* Gate/Cover Section */
+        .gate {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #020202 0%, #0a0a0a 50%, #020202 100%);
+            position: relative;
+            overflow: hidden;
+            transition: opacity 1s ease;
+        }
+
+        .gate::before {
+            content: '☠';
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.05;
+            animation: float 15s infinite linear;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(192,192,192,0.02) 50px, rgba(192,192,192,0.02) 100px);
+            font-family: var(--font-metal);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(10deg); }
+        }
+
+        .gate-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+        }
+
+        .subtitle {
+            font-family: var(--font-pirata);
+            font-size: 1.5rem;
+            letter-spacing: 0.5em;
+            color: var(--silver-dark);
+            margin-bottom: 1rem;
+            animation: fadeInDown 2s ease;
+            text-transform: uppercase;
+        }
+
+        .couple-names {
+            font-size: 4rem;
+            margin: 2rem 0;
+            animation: fadeInUp 2s ease 0.5s both;
+        }
+
+        .name {
+            display: block;
+            font-family: var(--font-metal);
+            background: linear-gradient(180deg, var(--silver-metal) 0%, var(--iron) 50%, var(--silver-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 100% 200%;
+            animation: metalShine 3s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        @keyframes metalShine {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 0% 100%; }
+        }
+
+        .ampersand {
+            font-family: var(--font-metal);
+            font-size: 3rem;
+            color: var(--blood);
+            display: block;
+            margin: 0.5rem 0;
+            text-shadow: 
+                0 0 15px rgba(139,0,0,0.8),
+                0 0 30px rgba(139,0,0,0.5);
+            animation: bloodPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bloodPulse {
+            0%, 100% { 
+                text-shadow: 0 0 15px rgba(139,0,0,0.8);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 35px rgba(220,20,60,1);
+                transform: scale(1.1);
+            }
+        }
+
+        .date {
+            font-family: var(--font-pirata);
+            font-size: 1.2rem;
+            color: var(--rust);
+            letter-spacing: 0.3em;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+        }
+
+        .open-btn {
+            padding: 1rem 3rem;
+            font-family: var(--font-metal);
+            font-size: 1.3rem;
+            color: var(--silver-metal);
+            background: transparent;
+            border: 3px solid var(--iron);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            box-shadow: 
+                inset 0 0 20px rgba(0,0,0,0.8),
+                0 0 20px rgba(192,192,192,0.1);
+        }
+
+        .open-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(192,192,192,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .open-btn:hover::before {
+            left: 100%;
+        }
+
+        .open-btn:hover {
+            background: rgba(192,192,192,0.1);
+            border-color: var(--blood);
+            box-shadow: 
+                inset 0 0 30px rgba(139,0,0,0.2),
+                0 0 40px rgba(139,0,0,0.3);
+            transform: translateY(-2px);
+            color: var(--blood-bright);
+        }
+
+        /* Smoke Effect */
+        .smoke-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(139,0,0,0.1) 0%, transparent 70%);
+            opacity: 0.6;
+            animation: smoke 8s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes smoke {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+            50% { transform: scale(1.2) rotate(10deg); opacity: 0.4; }
+        }
+
+        /* Main Content */
+        .hidden {
+            display: none !important;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+/* ==================== PHOTO CAPTIONS ON CLICK ==================== */
+
+.photo-side, .photo-main {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.photo-side:active, .photo-main:active {
+    transform: scale(0.95);
+}
+
+/* Modal Overlay */
+.photo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 2, 2, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.photo-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    animation: modalIn 0.4s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Large Image in Modal */
+.modal-image {
+    max-width: 600px;
+    max-height: 60vh;
+    border: 4px solid var(--iron);
+    border-radius: 10px;
+    box-shadow: 
+        0 0 0 2px var(--black-primary),
+        0 0 0 4px var(--blood),
+        0 0 60px rgba(139,0,0,0.5),
+        0 20px 80px rgba(0,0,0,0.9);
+    object-fit: cover;
+}
+
+/* Caption Box */
+.modal-caption {
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
+    background: linear-gradient(145deg, #0a0a0a 0%, #050505 100%);
+    border: 3px solid var(--blood);
+    border-radius: 10px;
+    box-shadow: 
+        0 0 30px rgba(139,0,0,0.3),
+        inset 0 0 30px rgba(0,0,0,0.8);
+    position: relative;
+    animation: captionGlow 2s ease-in-out infinite;
+}
+
+@keyframes captionGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 30px rgba(139,0,0,0.3),
+            inset 0 0 30px rgba(0,0,0,0.8);
+        border-color: var(--blood);
+    }
+    50% {
+        box-shadow: 
+            0 0 50px rgba(220,20,60,0.5),
+            inset 0 0 30px rgba(0,0,0,0.8);
+        border-color: var(--blood-bright);
+    }
+}
+
+.modal-quote {
+    font-family: var(--font-metal);
+    font-size: 1.8rem;
+    color: var(--silver-metal);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    text-shadow: 
+        0 2px 4px rgba(0,0,0,0.9),
+        0 0 20px rgba(192,192,192,0.5);
+}
+
+.modal-author {
+    font-family: var(--font-pirata);
+    font-size: 1.2rem;
+    color: var(--blood-bright);
+    letter-spacing: 0.2em;
+    font-style: italic;
+}
+
+.modal-author::before,
+.modal-author::after {
+    content: '✦';
+    margin: 0 1rem;
+    color: var(--iron);
+    font-size: 0.8rem;
+}
+
+/* Close Button */
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 3px solid var(--iron);
+    border-radius: 50%;
+    color: var(--silver-metal);
+    font-family: var(--font-metal);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.modal-close:hover {
+    border-color: var(--blood);
+    color: var(--blood-bright);
+    transform: rotate(90deg);
+    box-shadow: 0 0 30px rgba(139,0,0,0.5);
+}
+
+/* Click hint on photos */
+.photo-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-metal);
+    font-size: 1rem;
+    color: var(--silver-metal);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0;
+    transition: all 0.3s ease;
+    background: rgba(2,2,2,0.8);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--blood);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.photo-side:hover .photo-hint,
+.photo-main:hover .photo-hint {
+    opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .modal-image {
+        max-width: 100%;
+        max-height: 50vh;
+    }
+    .modal-caption {
+        padding: 1.5rem;
+    }
+    .modal-quote {
+        font-size: 1.3rem;
+    }
+    .modal-author {
+        font-size: 1rem;
+    }
+    .modal-close {
+        top: -40px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+        /* Gallery Section */
+
+        .gallery-hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .gallery-title {
+            font-family: var(--font-metal);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--iron);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .photo-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .photo-main {
+            grid-column: 2;
+            grid-row: 1 / 3;
+            position: relative;
+            aspect-ratio: 3/4;
+            border: 4px solid var(--iron);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 30px rgba(0,0,0,0.9),
+                0 0 60px rgba(192,192,192,0.1);
+            animation: floatPhoto 6s ease-in-out infinite;
+        }
+
+        .photo-side {
+            position: relative;
+            aspect-ratio: 1;
+            border: 3px solid var(--silver-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            opacity: 0.8;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .photo-side:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            border-color: var(--blood);
+            box-shadow: 0 0 30px rgba(139,0,0,0.3);
+        }
+
+        .photo-side.top { grid-column: 1; grid-row: 1; }
+        .photo-side.bottom { grid-column: 1; grid-row: 2; }
+        .photo-side.right-top { grid-column: 3; grid-row: 1; }
+        .photo-side.right-bottom { grid-column: 3; grid-row: 2; }
+
+        .photo-showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(50%) contrast(1.2) brightness(0.8);
+            transition: all 0.5s;
+        }
+
+        .photo-showcase img:hover {
+            filter: grayscale(20%) contrast(1.3) brightness(0.9);
+            transform: scale(1.1);
+        }
+
+        .photo-frame-decor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--blood);
+            z-index: 10;
+        }
+
+        .photo-frame-decor.tl { top: -5px; left: -5px; border-right: none; border-bottom: none; }
+        .photo-frame-decor.tr { top: -5px; right: -5px; border-left: none; border-bottom: none; }
+        .photo-frame-decor.bl { bottom: -5px; left: -5px; border-right: none; border-top: none; }
+        .photo-frame-decor.br { bottom: -5px; right: -5px; border-left: none; border-top: none; }
+
+        @keyframes floatPhoto {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .ornament {
+            width: 200px;
+            height: 50px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .ornament::before {
+            content: '☠';
+            font-family: var(--font-metal);
+            font-size: 3rem;
+            color: var(--iron);
+            opacity: 0.6;
+        }
+
+        .verse {
+            font-style: italic;
+            color: var(--silver-dark);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Couple Section */
+        .couple-section {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            padding: 3rem 0;
+        }
+
+        .profile {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease forwards;
+        }
+
+        .profile:nth-child(1) { animation-delay: 0.2s; }
+        .profile:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--iron);
+            box-shadow: 
+                0 0 0 2px var(--black-primary),
+                0 0 0 4px var(--blood),
+                0 0 60px rgba(139,0,0,0.3),
+                inset 0 0 40px rgba(0,0,0,0.8);
+            background: linear-gradient(45deg, #1a1a1a, #0a0a0a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 
+                0 0 0 2px var(--black-primary),
+                0 0 0 4px var(--blood-bright),
+                0 0 80px rgba(220,20,60,0.5),
+                inset 0 0 40px rgba(0,0,0,0.6);
+        }
+
+        .frame-border {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px dashed var(--iron);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(1.2) brightness(0.8);
+            transition: all 0.5s ease;
+            border-radius: 50%;
+        }
+
+        .profile-img:hover {
+            filter: grayscale(10%) contrast(1.3) brightness(0.9);
+            transform: scale(1.15);
+        }
+
+        .profile h2 {
+            font-family: var(--font-metal);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--silver-metal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .parents {
+            color: var(--silver-dark);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .divider {
+            font-family: var(--font-metal);
+            font-size: 3rem;
+            color: var(--blood);
+            animation: pulse 2s infinite;
+            text-shadow: 0 0 25px rgba(139,0,0,0.8);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        /* Details Section */
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .detail-card {
+            background: linear-gradient(145deg, #0a0a0a 0%, #050505 100%);
+            border: 2px solid var(--iron);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 
+                inset 0 0 30px rgba(0,0,0,0.9),
+                0 10px 40px rgba(0,0,0,0.8);
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blood);
+            box-shadow: 
+                inset 0 0 30px rgba(0,0,0,0.9),
+                0 15px 50px rgba(139,0,0,0.2);
+        }
+
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--blood), transparent);
+        }
+
+        .detail-card h3 {
+            font-family: var(--font-metal);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--silver-metal);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .date-text {
+            font-family: var(--font-pirata);
+            font-size: 1.1rem;
+            color: var(--blood-bright);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .time {
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+            color: var(--text-light);
+            font-family: var(--font-pirata);
+        }
+
+        .venue {
+            color: var(--silver-dark);
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            color: var(--iron);
+            text-decoration: none;
+            border: 2px solid var(--iron);
+            border-radius: 0;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-family: var(--font-metal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+
+        .map-btn:hover {
+            background: var(--blood);
+            border-color: var(--blood);
+            color: var(--silver-metal);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        /* ==================== COUNTDOWN TIMER METAL MANIA ==================== */
+        
+        .countdown-container {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+            background: linear-gradient(180deg, transparent 0%, rgba(139,0,0,0.05) 50%, transparent 100%);
+        }
+
+        .countdown-title {
+            font-family: var(--font-metal);
+            font-size: 4rem;
+            color: var(--silver-metal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 3rem;
+            text-shadow: 
+                0 0 10px rgba(192,192,192,0.8),
+                0 0 20px rgba(192,192,192,0.5),
+                0 0 40px rgba(192,192,192,0.3),
+                4px 4px 8px rgba(0,0,0,0.9);
+            animation: metalGlow 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes metalGlow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 10px rgba(192,192,192,0.8),
+                    0 0 20px rgba(192,192,192,0.5),
+                    0 0 40px rgba(192,192,192,0.3);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 20px rgba(220,20,60,0.9),
+                    0 0 40px rgba(220,20,60,0.6),
+                    0 0 60px rgba(220,20,60,0.4);
+                color: var(--blood-bright);
+            }
+        }
+
+        .countdown-title::before,
+        .countdown-title::after {
+            content: '⛓';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            color: var(--iron);
+            animation: chainSwing 3s ease-in-out infinite;
+        }
+
+        .countdown-title::before {
+            left: -60px;
+            animation-delay: 0s;
+        }
+
+        .countdown-title::after {
+            right: -60px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes chainSwing {
+            0%, 100% { transform: translateY(-50%) rotate(-5deg); }
+            50% { transform: translateY(-50%) rotate(5deg); }
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .countdown-box {
+            position: relative;
+            width: 120px;
+            height: 140px;
+            background: linear-gradient(145deg, 
+                #2a2a2a 0%, 
+                #1a1a1a 25%,
+                #0a0a0a 50%, 
+                #1a1a1a 75%,
+                #2a2a2a 100%);
+            border-radius: 8px;
+            border: 3px solid var(--iron);
+            box-shadow: 
+                0 0 0 2px var(--black-primary),
+                0 0 0 4px var(--silver-dark),
+                0 20px 50px rgba(0,0,0,0.9),
+                0 0 60px rgba(139,0,0,0.2),
+                inset 0 0 30px rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transform: perspective(500px) rotateX(5deg);
+            transition: all 0.3s ease;
+        }
+
+        .countdown-box:hover {
+            transform: perspective(500px) rotateX(0deg) scale(1.05);
+            border-color: var(--blood);
+            box-shadow: 
+                0 0 0 2px var(--black-primary),
+                0 0 0 4px var(--blood-bright),
+                0 25px 60px rgba(139,0,0,0.4),
+                0 0 80px rgba(220,20,60,0.3),
+                inset 0 0 30px rgba(0,0,0,0.6);
+        }
+
+        .countdown-box::before,
+        .countdown-box::after {
+            content: '⚙';
+            position: absolute;
+            font-size: 14px;
+            color: var(--iron);
+            z-index: 20;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+        }
+
+        .countdown-box::before {
+            top: 8px;
+            left: 8px;
+        }
+
+        .countdown-box::after {
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .countdown-number {
+            font-family: var(--font-metal);
+            font-size: 5rem;
+            color: var(--silver-metal);
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.9),
+                0 0 20px rgba(192,192,192,0.5),
+                0 0 40px rgba(139,0,0,0.3);
+            z-index: 10;
+            position: relative;
+            transition: all 0.3s ease;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-number.changed {
+            animation: numberPulse 0.5s ease;
+        }
+
+        @keyframes numberPulse {
+            0% { 
+                transform: scale(1);
+                text-shadow: 
+                    0 2px 4px rgba(0,0,0,0.9),
+                    0 0 20px rgba(192,192,192,0.5);
+            }
+            50% { 
+                transform: scale(1.2);
+                color: var(--blood-bright);
+                text-shadow: 
+                    0 0 30px rgba(220,20,60,1),
+                    0 0 60px rgba(220,20,60,0.8),
+                    0 0 90px rgba(220,20,60,0.5);
+            }
+            100% { 
+                transform: scale(1);
+                text-shadow: 
+                    0 2px 4px rgba(0,0,0,0.9),
+                    0 0 20px rgba(192,192,192,0.5);
+            }
+        }
+
+        .countdown-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .countdown-pulse.pulse-active {
+            animation: boxPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes boxPulse {
+            0%, 100% { 
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
+                border-color: transparent;
+            }
+            50% { 
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(1.05);
+                border-color: var(--blood);
+                box-shadow: 0 0 30px rgba(139,0,0,0.5);
+            }
+        }
+
+        .countdown-label {
+            font-family: var(--font-metal);
+            font-size: 1.3rem;
+            color: var(--iron);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-top: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+            position: relative;
+        }
+
+        .countdown-label::before,
+        .countdown-label::after {
+            content: '✦';
+            margin: 0 0.8rem;
+            color: var(--blood);
+            font-size: 0.8rem;
+            animation: starPulse 2s infinite;
+        }
+
+        @keyframes starPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); color: var(--blood-bright); }
+        }
+
+        .countdown-separator {
+            font-size: 3rem;
+            color: var(--blood);
+            align-self: center;
+            padding-bottom: 2rem;
+            text-shadow: 
+                0 0 20px rgba(139,0,0,0.8),
+                0 0 40px rgba(139,0,0,0.5);
+            animation: lightningFlash 2s ease-in-out infinite;
+        }
+
+        @keyframes lightningFlash {
+            0%, 100% { 
+                opacity: 1; 
+                text-shadow: 0 0 20px rgba(139,0,0,0.8);
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.6; 
+                text-shadow: 0 0 40px rgba(220,20,60,1), 0 0 60px rgba(220,20,60,0.5);
+                transform: scale(1.2);
+            }
+        }
+
+        .event-date {
+            font-family: var(--font-pirata);
+            font-size: 1.4rem;
+            color: var(--silver-dark);
+            margin-top: 3rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .event-date strong {
+            color: var(--blood-bright);
+            display: block;
+            font-size: 2rem;
+            margin-top: 0.5rem;
+            font-family: var(--font-metal);
+            text-shadow: 0 0 20px rgba(139,0,0,0.5);
+        }
+
+        .metal-ornament {
+            width: 100%;
+            max-width: 600px;
+            height: 40px;
+            margin: 0 auto 2rem;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 40"><path d="M0,20 Q50,5 100,20 T200,20 T300,20 T400,20 T500,20 T600,20" stroke="%234a4a4a" fill="none" stroke-width="3"/><path d="M50,10 L50,30 M150,10 L150,30 M250,10 L250,30 M350,10 L350,30 M450,10 L450,30 M550,10 L550,30" stroke="%238b0000" stroke-width="2"/></svg>') repeat-x center;
+            opacity: 0.6;
+        }
+
+        .metal-ornament-bottom {
+            transform: rotate(180deg);
+            margin: 2rem auto 0;
+        }
+
+        /* ==================== END COUNTDOWN TIMER ==================== */
+
+        /* RSVP Form */
+        .rsvp {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, select, textarea {
+            padding: 1rem;
+            background: rgba(10,10,10,0.9);
+            border: 2px solid var(--iron);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border-radius: 0;
+            outline: none;
+            transition: all 0.3s;
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--blood);
+            box-shadow: 0 0 20px rgba(139,0,0,0.3);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(208,208,208,0.3);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+            clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
+        }
+
+        .submit-btn {
+            padding: 1rem;
+            background: linear-gradient(45deg, var(--blood), #4a0000);
+            color: var(--silver-metal);
+            border: none;
+            font-family: var(--font-metal);
+            font-size: 1.3rem;
+            cursor: pointer;
+            border-radius: 0;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            box-shadow: 0 0 30px rgba(139,0,0,0.3);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, var(--blood-bright), var(--blood));
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            box-shadow: 0 0 50px rgba(220,20,60,0.5);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* RSVP Message Display */
+        .rsvp-message {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(145deg, #0a0a0a 0%, #050505 100%);
+            border: 3px solid var(--blood);
+            border-radius: 10px;
+            box-shadow: 
+                0 0 30px rgba(139,0,0,0.3),
+                inset 0 0 30px rgba(0,0,0,0.8);
+            animation: messageGlow 2s ease-in-out infinite;
+            display: none;
+        }
+
+        .rsvp-message.show {
+            display: block;
+            animation: slideInMessage 0.5s ease;
+        }
+
+        @keyframes slideInMessage {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes messageGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 30px rgba(139,0,0,0.3),
+                    inset 0 0 30px rgba(0,0,0,0.8);
+                border-color: var(--blood);
+            }
+            50% {
+                box-shadow: 
+                    0 0 50px rgba(220,20,60,0.5),
+                    inset 0 0 30px rgba(0,0,0,0.8);
+                border-color: var(--blood-bright);
+            }
+        }
+
+        .rsvp-message h3 {
+            font-family: var(--font-metal);
+            font-size: 1.8rem;
+            color: var(--silver-metal);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .rsvp-message p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .rsvp-message .label {
+            color: var(--silver-dark);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.2rem;
+        }
+
+        .rsvp-message .value {
+            color: var(--blood-bright);
+            font-family: var(--font-pirata);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .rsvp-message .close-btn {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 2px solid var(--iron);
+            color: var(--silver-metal);
+            font-family: var(--font-metal);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .rsvp-message .close-btn:hover {
+            background: var(--blood);
+            border-color: var(--blood);
+            color: var(--silver-metal);
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .photo-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #0a0a0a, #020202);
+            border: 3px solid var(--iron);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+
+        .photo-item::before {
+            content: '☠';
+            font-family: var(--font-metal);
+            opacity: 0.3;
+            transition: all 0.3s;
+        }
+
+        .photo-item:hover {
+            border-color: var(--blood);
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(139,0,0,0.4);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .photo-item:hover::before {
+            opacity: 1;
+            color: var(--blood-bright);
+            transform: scale(1.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 3px solid var(--iron);
+            margin-top: 3rem;
+            background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.8) 100%);
+        }
+
+        footer p {
+            color: var(--silver-dark);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: var(--iron);
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            font-family: var(--font-metal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--blood);
+            transition: width 0.3s;
+            box-shadow: 0 0 10px rgba(139,0,0,0.5);
+        }
+
+        .social-links a:hover {
+            color: var(--blood-bright);
+        }
+
+        .social-links a:hover::after {
+            width: 100%;
+        }
+   
+
+        /* Particles Canvas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+
+
+        }
+
+
+        /* Music Control */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: rgba(10,10,10,0.9);
+            border: 3px solid var(--iron);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+            font-size: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .music-control.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .music-control:hover {
+            background: rgba(139,0,0,0.3);
+            border-color: var(--blood);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px rgba(139,0,0,0.4);
+        }
+
+        .music-control.muted {
+            border-color: var(--silver-dark);
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .couple-names { font-size: 2.5rem; }
+            .subtitle { font-size: 1rem; letter-spacing: 0.3em; }
+            .couple-section { grid-template-columns: 1fr; gap: 3rem; }
+            .divider { transform: rotate(90deg); }
+            .details { grid-template-columns: 1fr; }
+            
+            .countdown-title {
+                font-size: 2.2rem;
+            }
+            .countdown-title::before,
+            .countdown-title::after {
+                display: none;
+            }
+            .countdown-box {
+                width: 80px;
+                height: 100px;
+            }
+            .countdown-number {
+                font-size: 3.5rem;
+            }
+            .countdown-separator {
+                font-size: 2rem;
+                padding-bottom: 1.5rem;
+            }
+            .countdown-label {
+                font-size: 1rem;
+            }
+            .countdown-label::before,
+            .countdown-label::after {
+                display: none;
+            }
+            .countdown-timer {
+                gap: 0.8rem;
+            }
+            
+            .photo-grid { grid-template-columns: 1fr; }
+            .gate-content { padding: 1rem; }
+            
+            .photo-showcase {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .photo-main {
+                grid-column: 1 / 3;
+                grid-row: 1;
+                aspect-ratio: 4/3;
+            }
+            .photo-side { aspect-ratio: 1; }
+            .photo-side.top { grid-column: 1; grid-row: 2; }
+            .photo-side.bottom { grid-column: 2; grid-row: 2; }
+            .photo-side.right-top,
+            .photo-side.right-bottom { display: none; }
+
+            .rsvp-message {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--black-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--iron);
+            border-radius: 0;
+            border: 2px solid var(--black-primary);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--blood);
+        }
+
+/* ==================== SAVE THE DATE SIMPLE ==================== */
+
+.std-simple {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 2, 2, 0.98);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.std-simple.active {
+    display: flex;
+}
+
+.std-simple img {
+    max-width: 100%;
+    max-height: 90vh;
+    border: 5px solid var(--blood);
+    border-radius: 10px;
+    box-shadow: 0 0 60px rgba(139,0,0,0.5);
+}
+
+.std-simple .close-hint {
+    position: absolute;
+    bottom: 2rem;
+    font-family: var(--font-metal);
+    color: var(--silver-dark);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+        /* ==================== INSTAGRAM CHOICE MODAL ==================== */
+
+.ig-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 2, 2, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.ig-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ig-modal-content {
+    background: linear-gradient(145deg, #0a0a0a 0%, #050505 100%);
+    border: 3px solid var(--blood);
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 
+        0 0 50px rgba(139,0,0,0.4),
+        inset 0 0 30px rgba(0,0,0,0.8);
+    animation: igModalIn 0.4s ease;
+    position: relative;
+}
+
+@keyframes igModalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.ig-modal-title {
+    font-family: var(--font-metal);
+    font-size: 2rem;
+    color: var(--silver-metal);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(192,192,192,0.5);
+}
+
+.ig-modal-subtitle {
+    font-family: var(--font-pirata);
+    font-size: 1.1rem;
+    color: var(--silver-dark);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.ig-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.ig-choice-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 2px solid var(--iron);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-light);
+    text-align: left;
+}
+
+.ig-choice-btn:hover {
+    border-color: var(--blood);
+    transform: translateX(10px);
+    box-shadow: 
+        0 0 30px rgba(139,0,0,0.3),
+        inset 0 0 20px rgba(139,0,0,0.1);
+}
+
+.ig-choice-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--blood);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: linear-gradient(145deg, #2a2a2a, #0a0a0a);
+    box-shadow: 0 0 20px rgba(139,0,0,0.3);
+}
+
+.ig-choice-info {
+    flex: 1;
+}
+
+.ig-choice-name {
+    font-family: var(--font-metal);
+    font-size: 1.3rem;
+    color: var(--silver-metal);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+}
+
+.ig-choice-handle {
+    font-family: var(--font-pirata);
+    font-size: 1rem;
+    color: var(--blood-bright);
+    letter-spacing: 0.05em;
+}
+
+.ig-choice-arrow {
+    font-size: 1.5rem;
+    color: var(--iron);
+    transition: all 0.3s ease;
+}
+
+.ig-choice-btn:hover .ig-choice-arrow {
+    color: var(--blood-bright);
+    transform: translateX(5px);
+}
+
+.ig-modal-close {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 2px solid var(--iron);
+    color: var(--silver-metal);
+    font-family: var(--font-metal);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.ig-modal-close:hover {
+    background: var(--blood);
+    border-color: var(--blood);
+    color: var(--silver-metal);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Ornament */
+.ig-ornament {
+    width: 100%;
+    height: 30px;
+    margin: 1.5rem 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 30"><path d="M0,15 Q25,5 50,15 T100,15 T150,15 T200,15 T250,15 T300,15 T350,15 T400,15" stroke="%238b0000" fill="none" stroke-width="2"/></svg>') repeat-x center;
+    opacity: 0.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .ig-modal-content {
+        padding: 2rem;
+    }
+    .ig-modal-title {
+        font-size: 1.5rem;
+    }
+    .ig-choice-btn {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .ig-choice-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .ig-choice-name {
+        font-size: 1.1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto" muted>
+        <source src="soundtrack.mp3" type="audio/mpeg">
+        <source src="soundtrack.ogg" type="audio/ogg">
+        Browser Anda tidak mendukung pemutaran audio.
+    </audio>
+
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Opening Gate / Cover -->
+    <section id="cover" class="gate">
+        <div class="smoke-effect"></div>
+        <div class="gate-content">
+            <h2 class="subtitle">The Wedding of</h2>
+            <h1 class="couple-names">
+                <span class="name">Essa</span>
+                <span class="ampersand">&</span>
+                <span class="name">Nuri</span>
+            </h1>
+            <p class="date">Coming Soon</p>
+            <button class="open-btn" onclick="openInvitation()">
+                ✦ Open Invitation ✦
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="hidden">
+
+        <!-- Gallery Section -->
+      <!-- GALLERY SECTION - OUR JOURNEY -->
+<section class="gallery-hero">
+    <h2 class="gallery-title">Our Journey</h2>
+    <div class="photo-showcase">
+        
+        <!-- Photo 1 -->
+        <div class="photo-side top" onclick="openModal('foto1.jpg', 'In darkness we found each other', 'First Meeting')">
+            <div class="photo-frame-decor tl"></div>
+            <div class="photo-frame-decor tr"></div>
+            <div class="photo-frame-decor bl"></div>
+            <div class="photo-frame-decor br"></div>
+            <img src="foto1.jpg" alt="Moment 1" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22><rect fill=%22%230a0a0a%22 width=%22400%22 height=%22400%22/><text fill=%22%238b0000%22 x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 font-size=%2260%22>🖤</text></svg>'">
+            <span class="photo-hint">Click</span>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="photo-side bottom" onclick="openModal('foto2.jpg', 'Two souls, one shadow', 'Our Promise')">
+            <div class="photo-frame-decor tl"></div>
+            <div class="photo-frame-decor tr"></div>
+            <div class="photo-frame-decor bl"></div>
+            <div class="photo-frame-decor br"></div>
+            <img src="foto2.jpg" alt="Moment 2" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22><rect fill=%22%230a0a0a%22 width=%22400%22 height=%22400%22/><text fill=%22%238b0000%22 x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 font-size=%2260%22>🥀</text></svg>'">
+            <span class="photo-hint">Click</span>
+        </div>
+
+        <!-- Photo Main -->
+        <div class="photo-main" onclick="openModal('foto-utama.jpg', 'Bound in eternal night', 'Forever Begins')">
+            <div class="photo-frame-decor tl"></div>
+            <div class="photo-frame-decor tr"></div>
+            <div class="photo-frame-decor bl"></div>
+            <div class="photo-frame-decor br"></div>
+            <img src="foto-utama.jpg" alt="Main Photo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22800%22><rect fill=%22%230a0a0a%22 width=%22600%22 height=%22800%22/><text fill=%22%238b0000%22 x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 font-size=%2280%22>👰🤵</text></svg>'">
+            <span class="photo-hint">Click</span>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="photo-side right-top" onclick="openModal('foto3.jpg', 'Love never dies', 'Our Vow')">
+            <div class="photo-frame-decor tl"></div>
+            <div class="photo-frame-decor tr"></div>
+            <div class="photo-frame-decor bl"></div>
+            <div class="photo-frame-decor br"></div>
+            <img src="foto3.jpg" alt="Moment 3" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22><rect fill=%22%230a0a0a%22 width=%22400%22 height=%22400%22/><text fill=%22%238b0000%22 x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 font-size=%2260%22>💀</text></svg>'">
+            <span class="photo-hint">Click</span>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="photo-side right-bottom" onclick="openModal('foto4.jpg', 'Until the end of time', 'Our Destiny')">
+            <div class="photo-frame-decor tl"></div>
+            <div class="photo-frame-decor tr"></div>
+            <div class="photo-frame-decor bl"></div>
+            <div class="photo-frame-decor br"></div>
+            <img src="foto4.jpg" alt="Moment 4" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22><rect fill=%22%230a0a0a%22 width=%22400%22 height=%22400%22/><text fill=%22%238b0000%22 x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 font-size=%2260%22>🦇</text></svg>'">
+            <span class="photo-hint">Click</span>
+        </div>
+        
+    </div>
+</section>
+
+
+
+<!-- INSTAGRAM CHOICE MODAL -->
+    <div id="igModal" class="ig-modal" onclick="closeIgModal(event)">
+        <div class="ig-modal-content" onclick="event.stopPropagation()">
+            
+            <h3 class="ig-modal-title">✦ Choose Account ✦</h3>
+            <div class="ig-ornament"></div>
+            <p class="ig-modal-subtitle">Our instagram account</p>
+            
+            <div class="ig-choices">
+                <!-- Groom Instagram -->
+                <a href="https://instagram.com/mahesa.indraa" target="_blank" rel="noopener noreferrer" class="ig-choice-btn" onclick="closeIgModal()">
+                    <div class="ig-choice-avatar">🤵</div>
+                    <div class="ig-choice-info">
+                        <div class="ig-choice-name">Essa</div>
+                        <div class="ig-choice-handle">@mahesa.indraa</div>
+                    </div>
+                    <span class="ig-choice-arrow">➤</span>
+                </a>
+                
+                <!-- Bride Instagram -->
+                <a href="https://instagram.com/nurinurr26" target="_blank" rel="noopener noreferrer" class="ig-choice-btn" onclick="closeIgModal()">
+                    <div class="ig-choice-avatar">👰</div>
+                    <div class="ig-choice-info">
+                        <div class="ig-choice-name">Nuri</div>
+                        <div class="ig-choice-avatar-handle">@nurinurr26</div>
+                    </div>
+                    <span class="ig-choice-arrow">➤</span>
+                </a>
+            </div>
+            
+            <button class="ig-modal-close" onclick="closeIgModal()">✕ Close</button>
+            
+        </div>
+    </div>
+
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="ornament"></div>
+            <h1 class="gothic-title">when darkness leads to the light of eternity</h1>
+            <p class="verse">"Two souls, one shadow, bound in eternal night"</p>
+            <div class="ornament"></div>
+        </section>
+
+        <!-- Couple Profile -->
+        <section class="couple-section">
+            <div class="profile">
+                <div class="photo-frame">
+                    <div class="frame-border"></div>
+                    <img src="groom.jpg" alt="Mahesa Indra" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span style="display:none; font-size:4rem;">🎩</span>
+                </div>
+                <h2>Mahesa Indra</h2>
+                <p class="parents">Putra pertama dari Ibu Marwati</p>
+            </div>
+
+            <div class="divider">🌻</div>
+
+            <div class="profile">
+                <div class="photo-frame">
+                    <div class="frame-border"></div>
+                    <img src="bride.jpg" alt="Nurfajriah" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span style="display:none; font-size:4rem;">👰</span>
+                </div>
+                <h2>Nurfajriah S.Sos</h2>
+                <p class="parents">Putri pertama dari Bpk. Ust. Ismail Hasan S.Ag dan Ibu Muslimah</p>
+            </div>
+        </section>
+
+        <!-- Event Details -->
+        <section class="details">
+            <div class="detail-card">
+                <h3>✦ Akad Nikah ✦</h3>
+                <p class="date-text">COMING SOON</p>
+                <p class="time">KALO GAK SABTU YA PALING MINGGU</p>
+                <p class="venue">
+                    <strong>Masjidil Haram</strong><br>
+             
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=21.422487,39.826206" target="_blank" rel="noopener noreferrer" class="map-btn">
+                    🕌 View Map ↗
+                </a>
+            </div>
+            
+            <div class="detail-card">
+                <h3>✦ Resepsi ✦</h3>
+                <p class="date-text">COMING SOON</p>
+                <p class="time">POKOKNYA PAS HARI LIBUR</p>
+                <p class="venue">
+                    <strong>Tempat Rahasia</strong><br>
+                     
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=-6.318366,106.954583" target="_blank" rel="noopener noreferrer" class="map-btn">
+                    🏨 View Map ↗
+                </a>
+            </div>
+
+        </section>
+
+        <!-- ==================== COUNTDOWN TIMER METAL MANIA ==================== -->
+        <section class="countdown-container">
+            <div class="metal-ornament"></div>
+            
+            <h2 class="countdown-title">Counting the Days</h2>
+            
+            <div class="countdown-timer" id="countdownTimer">
+                <div class="countdown-unit">
+                    <div class="countdown-box" id="daysBox">
+                        <span class="countdown-number" id="daysNum">00</span>
+                        <div class="countdown-pulse"></div>
+                    </div>
+                    <span class="countdown-label">Days</span>
+                </div>
+                
+                <div class="countdown-separator">🔥</div>
+                
+                <div class="countdown-unit">
+                    <div class="countdown-box" id="hoursBox">
+                        <span class="countdown-number" id="hoursNum">00</span>
+                        <div class="countdown-pulse"></div>
+                    </div>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                
+                <div class="countdown-separator">🔥</div>
+                
+                <div class="countdown-unit">
+                    <div class="countdown-box" id="minutesBox">
+                        <span class="countdown-number" id="minutesNum">00</span>
+                        <div class="countdown-pulse"></div>
+                    </div>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                
+                <div class="countdown-separator">🔥</div>
+                
+                <div class="countdown-unit">
+                    <div class="countdown-box" id="secondsBox">
+                        <span class="countdown-number" id="secondsNum">00</span>
+                        <div class="countdown-pulse pulse-active"></div>
+                    </div>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            
+            <p class="event-date">
+                A better days will be come
+                <strong>that's is true</strong>
+            </p>
+            
+            <div class="metal-ornament metal-ornament-bottom"></div>
+        </section>
+
+        <!-- RSVP Form -->
+        <section class="rsvp">
+            <h2>RSVP</h2>
+            
+            <!-- RSVP Message Display Area -->
+            <div id="rsvpMessage" class="rsvp-message">
+                <h3>✦ RSVP Received ✦</h3>
+                <div class="label">Name</div>
+                <div class="value" id="msgName">-</div>
+                
+                <div class="label">Email</div>
+                <div class="value" id="msgEmail">-</div>
+                
+                <div class="label">Attendance</div>
+                <div class="value" id="msgAttendance">-</div>
+                
+                <div class="label">Number of Guests</div>
+                <div class="value" id="msgGuests">-</div>
+                
+                <div class="label">Message</div>
+                <div class="value" id="msgMessage" style="font-style: italic;">-</div>
+                
+                <button class="close-btn" onclick="closeRSVPMessage()">Close</button>
+            </div>
+
+            <form id="rsvpForm" onsubmit="handleRSVP(event)">
+                <input type="text" id="guestName" placeholder="Your Name" required>
+                <input type="email" id="guestEmail" placeholder="Email Address" required>
+                <select id="attendance" required>
+                    <option value="">Will you attend?</option>
+                    <option value="yes">✦ Joyfully Accept</option>
+                    <option value="no">✦ Regretfully Decline</option>
+                </select>
+                <input type="number" id="guestCount" placeholder="Number of Guests" min="1" max="5" value="1">
+                <textarea id="message" placeholder="Leave a message for the couple..."></textarea>
+                <button type="submit" class="submit-btn" id="submitBtn">Send RSVP</button>
+            </form>
+        </section>
+
+        <!-- Gallery -->
+            <!-- GANTI BAGIAN INI -->
+<!-- GALLERY SECTION - OUR DARK ROMANCE -->
+<section class="gallery">
+    <h2 class="section-title">Glory be to Allah Azza Wa jalla, The Lord and Creator of The Universal</h2>
+    <div class="photo-grid">
+        
+        <!-- Photo 1 -->
+        <div class="photo-item" onclick="openModal('foto5.jpg', 'Q.S An-Nisa Ayat 1', 'Tuhan telah menegaskan bahwa Ia telah  menciptakan manusia berpasang-pasangan untuk berkembangbiak dan mengembangkan keturunan dengan baik.')">
+            <img src="foto9.jpg" alt="Romance 1" 
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex'">
+            <span class="fallback-icon" style="display:none;">🖤</span>
+            <span class="photo-hint">Click</span>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="photo-item" onclick="openModal('foto6.jpg', 'Q.S Al-Baqarah Ayat 223', 'Ayat ini memerintahkan kepada para Suami untuk menggauli Istrinya dengan baik.')">
+            <img src="foto9.jpg" alt="Romance 2" 
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex'">
+            <span class="fallback-icon" style="display:none;">🥀</span>
+            <span class="photo-hint">Click</span>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="photo-item" onclick="openModal('foto7.jpg', 'Q.S Az-Zariyat Ayat 49', 'Dalam ayat ini Tuhan menjelaskan bahwa sesuatu di muka bumi diciptakan berpasang-pasangan.')">
+            <img src="foto9.jpg" alt="Romance 3" 
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex'">
+            <span class="fallback-icon" style="display:none;">💀</span>
+            <span class="photo-hint">Click</span>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="photo-item" onclick="openModal('foto8.jpg', 'Q.S Ali-Imran ayat 14', 'Ayat ini menerangkan bahwa para istri adalah penghibur bagi suaminya.')">
+            <img src="foto9.jpg" alt="Romance 4" 
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex'">
+            <span class="fallback-icon" style="display:none;">🦇</span>
+            <span class="photo-hint">Click</span>
+        </div>
+        
+    </div>
+</section>
+        
+
+        <!-- Footer -->
+        <footer>
+            <p>Crafted with eternal love in the shadows</p>
+            <div class="social-links">
+                <a href="#" onclick="openIgModal(); return false;">Instagram</a>
+                
+            <a href="#" onclick="document.getElementById('stdSimple').classList.add('active'); document.body.style.overflow='hidden'; return false;">Save the Date</a>
+    </div>
+        </footer>
+
+        <div id="photoModal" class="photo-modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <img id="modalImage" src="" alt="Photo" class="modal-image">
+            <div class="modal-caption">
+                <p id="modalQuote" class="modal-quote">""</p>
+                <span id="modalAuthor" class="modal-author">—</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SAVE THE DATE SIMPLE -->
+    <div id="stdSimple" class="std-simple" onclick="this.classList.remove('active'); document.body.style.overflow='auto';">
+        <img src="calendar.jpg" alt="Save the Date" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22800%22><rect fill=%22%23111%22 width=%22600%22 height=%22800%22/><text fill=%22%238b0000%22 x=%2250%%22 y=%2245%%22 text-anchor=%22middle%22 font-size=%2250%22 font-family=%22Metal+Mania%22>Save the Date</text><text fill=%22%23c0c0c0%22 x=%2250%%22 y=%2255%%22 text-anchor=%22middle%22 font-size=%2230%22 font-family=%22Pirata+One%22>26 July 2028</text></svg>'">
+        <span class="close-hint">Click anywhere to close</span>
+    </div>
+
+</main>
+
+    </main>
+
+    <!-- Music Control -->
+    <div class="music-control" id="musicBtn" onclick="toggleMusic()">🔇</div>
+
+    <script>
+
+        // ==================== INSTAGRAM CHOICE MODAL ====================
+
+function openIgModal() {
+    const modal = document.getElementById('igModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeIgModal(event) {
+    // Close if clicked on overlay or close button
+    if (!event || event.target.id === 'igModal' || event.target.classList.contains('ig-modal-close')) {
+        const modal = document.getElementById('igModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close with Escape key (tambahkan di event listener yang sudah ada)
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();      // Photo modal
+        closeIgModal();    // Instagram modal
+    }
+});
+
+
+        // ==================== PHOTO MODAL FUNCTIONS ====================
+
+function openModal(imageSrc, quote, author) {
+    const modal = document.getElementById('photoModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalQuote = document.getElementById('modalQuote');
+    const modalAuthor = document.getElementById('modalAuthor');
+    
+    // Set content
+    modalImage.src = imageSrc;
+    modalQuote.textContent = '"' + quote + '"';
+    modalAuthor.textContent = '— ' + author;
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+}
+
+function closeModal(event) {
+    // Close if clicked on overlay or close button
+    if (!event || event.target.id === 'photoModal' || event.target.classList.contains('modal-close')) {
+        const modal = document.getElementById('photoModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scroll
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+        // Variabel global
+        let isPlaying = false;
+        let musicInitialized = false;
+        let prevValues = {
+            days: '00',
+            hours: '00',
+            minutes: '00',
+            seconds: '00'
+        };
+
+        const music = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+
+        music.addEventListener('error', function(e) {
+            console.error('❌ Audio Error:', e);
+        });
+
+        music.addEventListener('canplaythrough', function() {
+            console.log('✅ Audio ready');
+        });
+
+        music.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play().catch(e => console.log('Loop error:', e));
+        });
+
+        // Particles System
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particles-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.resize();
+                this.init();
+                this.animate();
+                window.addEventListener('resize', () => this.resize());
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            init() {
+                const particleCount = window.innerWidth < 768 ? 30 : 60;
+                for (let i = 0; i < particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        size: Math.random() * 3 + 1,
+                        speedX: (Math.random() - 0.5) * 0.5,
+                        speedY: (Math.random() - 0.5) * 0.5,
+                        opacity: Math.random() * 0.5 + 0.2,
+                        color: Math.random() > 0.8 ? '#8b0000' : '#c0c0c0'
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(p => {
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+
+                    if (p.x < 0 || p.x > this.canvas.width) p.speedX *= -1;
+                    if (p.y < 0 || p.y > this.canvas.height) p.speedY *= -1;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = p.color;
+                    this.ctx.globalAlpha = p.opacity;
+                    this.ctx.fill();
+
+                    this.particles.forEach(p2 => {
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 100) {
+                            this.ctx.beginPath();
+                            this.ctx.strokeStyle = '#c0c0c0';
+                            this.ctx.globalAlpha = 0.1 * (1 - distance / 100);
+                            this.ctx.lineWidth = 1;
+                            this.ctx.moveTo(p.x, p.y);
+                            this.ctx.lineTo(p2.x, p2.y);
+                            this.ctx.stroke();
+                        }
+                    });
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+            
+
+        const particles = new ParticleSystem();
+
+        // Open Invitation
+        function openInvitation() {
+            const cover = document.getElementById('cover');
+            const main = document.getElementById('mainContent');
+
+            music.muted = false;
+            music.volume = 0.3;
+
+            const playPromise = music.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    isPlaying = true;
+                    musicInitialized = true;
+                    musicBtn.textContent = '🎵';
+                    musicBtn.classList.add('visible');
+                    musicBtn.classList.remove('muted');
+                }).catch(error => {
+                    isPlaying = false;
+                    musicInitialized = true;
+                    musicBtn.textContent = '🔇';
+                    musicBtn.classList.add('visible');
+                    musicBtn.classList.add('muted');
+                });
+            }
+
+            cover.style.animation = 'fadeOut 1s forwards';
+
+            setTimeout(() => {
+                cover.classList.add('hidden');
+                main.classList.remove('hidden');
+                document.body.style.overflow = 'auto';
+            }, 1000);
+        }
+
+        // Toggle Music
+        function toggleMusic() {
+            if (!musicInitialized) return;
+
+            if (isPlaying) {
+                music.pause();
+                musicBtn.textContent = '🔇';
+                musicBtn.classList.add('muted');
+            } else {
+                music.muted = false;
+                music.volume = 0.3;
+                music.play().then(() => {
+                    musicBtn.textContent = '🎵';
+                    musicBtn.classList.remove('muted');
+                }).catch(err => {
+                    alert('Gagal memutar musik: ' + err.message);
+                });
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Countdown Timer
+        const targetDate = new Date('2028-07-26T19:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const newValues = {
+                    days: String(days).padStart(2, '0'),
+                    hours: String(hours).padStart(2, '0'),
+                    minutes: String(minutes).padStart(2, '0'),
+                    seconds: String(seconds).padStart(2, '0')
+                };
+
+                updateNumber('days', newValues.days, prevValues.days);
+                updateNumber('hours', newValues.hours, prevValues.hours);
+                updateNumber('minutes', newValues.minutes, prevValues.minutes);
+                updateNumber('seconds', newValues.seconds, prevValues.seconds);
+
+                prevValues = newValues;
+            } else {
+                document.querySelector('.countdown-title').textContent = 'The Day Has Come';
+                document.getElementById('daysNum').textContent = '00';
+                document.getElementById('hoursNum').textContent = '00';
+                document.getElementById('minutesNum').textContent = '00';
+                document.getElementById('secondsNum').textContent = '00';
+            }
+        }
+
+        function updateNumber(unit, newValue, oldValue) {
+            const element = document.getElementById(unit + 'Num');
+            
+            if (newValue !== oldValue) {
+                element.classList.add('changed');
+                element.textContent = newValue;
+                
+                setTimeout(() => {
+                    element.classList.remove('changed');
+                }, 500);
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // RSVP Handler dengan Display Message
+        function handleRSVP(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            
+            // Get form data
+            const data = {
+                name: document.getElementById('guestName').value,
+                email: document.getElementById('guestEmail').value,
+                attendance: document.getElementById('attendance').value,
+                guests: document.getElementById('guestCount').value,
+                message: document.getElementById('message').value || 'No message'
+            };
+
+            // Format attendance text
+            const attendanceText = data.attendance === 'yes' ? '✦ Joyfully Accept' : '✦ Regretfully Decline';
+
+            // Update message display
+            document.getElementById('msgName').textContent = data.name;
+            document.getElementById('msgEmail').textContent = data.email;
+            document.getElementById('msgAttendance').textContent = attendanceText;
+            document.getElementById('msgGuests').textContent = data.guests + ' Guest(s)';
+            document.getElementById('msgMessage').textContent = '"' + data.message + '"';
+
+            // Show message box
+            const messageBox = document.getElementById('rsvpMessage');
+            messageBox.classList.add('show');
+            
+            // Scroll to message
+            messageBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Change button state
+            submitBtn.textContent = '✓ Sent Successfully';
+            submitBtn.style.background = '#2d5016';
+            submitBtn.disabled = true;
+
+            // Log to console (for developer)
+            console.log('RSVP Data:', data);
+
+            // Reset form after delay
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+                document.getElementById('rsvpForm').reset();
+            }, 3000);
+        }
+
+        // Close RSVP Message
+        function closeRSVPMessage() {
+            const messageBox = document.getElementById('rsvpMessage');
+            messageBox.classList.remove('show');
+        }
+
+        // Save the Date
+        function saveTheDate() {
+            const event = {
+                title: 'The Wedding of Essa & Nuri',
+                date: '20280726T190000',
+                endDate: '20280726T230000',
+                location: 'Makkah & Bekasi'
+            };
+
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${event.date}
+DTEND:${event.endDate}
+SUMMARY:${event.title}
+LOCATION:${event.location}
+DESCRIPTION:The Dark Union - Wedding Celebration
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: 'text/calendar' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'wedding-essa-nuri.ics';
+            a.click();
+
+            alert('Calendar file downloaded!');
+        }
+
+        // Scroll reveal
+        window.addEventListener('scroll', () => {
+            const reveals = document.querySelectorAll('.detail-card, .countdown-container');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.body.style.overflow = 'hidden';
+
+        console.log('%c☠ Essa & Nuri ☠', 'color: #8b0000; font-size: 24px; font-family: Metal Mania;');
+        console.log('%coming soon', 'color: #c0c0c0; font-size: 14px;');
+    </script>
+</body>
+</html>
